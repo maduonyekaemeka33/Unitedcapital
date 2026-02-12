@@ -1,0 +1,14 @@
+function submitLoan(){
+    let amount = document.getElementById("loanAmount").value;
+    let message = document.getElementById("messageBox").value;
+
+    localStorage.setItem("loanAmount", amount);
+    localStorage.setItem("loanMessage", message);
+
+    alert("Loan application submitted. Admin will review shortly.");
+}
+
+function loadLoan(){
+    document.getElementById("adminAmount").innerText = localStorage.getItem("loanAmount") || "No request yet";
+    document.getElementById("adminMessage").innerText = localStorage.getItem("loanMessage") || "-";
+}
